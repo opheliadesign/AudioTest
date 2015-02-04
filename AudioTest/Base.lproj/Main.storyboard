@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,69 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dEL-I4-mHy">
+                                <rect key="frame" x="260" y="285" width="80" height="30"/>
+                                <state key="normal" title="Player View">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hac-wc-gHj" kind="show" id="f41-0i-KlK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="dEL-I4-mHy" secondAttribute="centerX" id="ErJ-pu-vmt"/>
+                            <constraint firstAttribute="centerY" secondItem="dEL-I4-mHy" secondAttribute="centerY" id="YLa-Iw-qj3"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Player View Controller-->
+        <scene sceneID="iIm-OR-4iy">
+            <objects>
+                <viewController id="hac-wc-gHj" customClass="PlayerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nxD-9p-8t3"/>
+                        <viewControllerLayoutGuide type="bottom" id="vvz-Mf-bhZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HUV-lF-aWZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VIg-aP-2OF">
+                                <rect key="frame" x="14" y="303" width="572" height="31"/>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7b-Vl-Trh">
+                                <rect key="frame" x="67" y="111" width="91" height="30"/>
+                                <state key="normal" title="Back to Main">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="vXZ-lx-hvc" kind="show" id="uJa-OD-rbC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="E7b-Vl-Trh" firstAttribute="leading" secondItem="HUV-lF-aWZ" secondAttribute="leadingMargin" constant="51" id="Cdg-bL-ZUF"/>
+                            <constraint firstItem="VIg-aP-2OF" firstAttribute="trailing" secondItem="HUV-lF-aWZ" secondAttribute="trailingMargin" id="NDs-UF-tlT"/>
+                            <constraint firstAttribute="centerX" secondItem="VIg-aP-2OF" secondAttribute="centerX" id="S2l-ro-Oz3"/>
+                            <constraint firstAttribute="centerY" secondItem="VIg-aP-2OF" secondAttribute="centerY" constant="-18" id="cZL-NM-fPG"/>
+                            <constraint firstItem="VIg-aP-2OF" firstAttribute="leading" secondItem="HUV-lF-aWZ" secondAttribute="leadingMargin" id="fKX-Vs-XWf"/>
+                            <constraint firstItem="E7b-Vl-Trh" firstAttribute="top" secondItem="nxD-9p-8t3" secondAttribute="bottom" constant="91" id="xQb-jw-BAE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="slider" destination="VIg-aP-2OF" id="FnV-Xm-rLs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Act-qC-OSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1279" y="653"/>
         </scene>
     </scenes>
 </document>
