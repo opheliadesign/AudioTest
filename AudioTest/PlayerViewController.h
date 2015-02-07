@@ -12,4 +12,5 @@
 @property (strong, nonatomic) AVAudioPlayer *player;
 @property (strong, nonatomic) NSTimer *updateTimer;
 @property (strong, nonatomic) IBOutlet UISlider *slider;
+- (IBAction)seek:(id)sender;
 @end

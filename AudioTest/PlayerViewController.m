@@ -16,6 +16,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    NSLog(@"View loaded");
     // Register to receive notification from AppDelegate when entering background
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(stopPlayingAudio) name:@"stopPlayingAudio" object:nil];
     
@@ -56,10 +62,16 @@
     NSLog(@"progress - %f", progress);
     [self.slider setValue:progress];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 
+- (IBAction)seek:(id)sender {
+    if (self.player) {
+        self.player.currentTime = self.slider.value;
+    }
+}
 @end

@@ -51,6 +51,9 @@
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="VIg-aP-2OF">
                                 <rect key="frame" x="14" y="303" width="572" height="31"/>
+                                <connections>
+                                    <action selector="seek:" destination="hac-wc-gHj" eventType="valueChanged" id="czG-NI-JKm"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E7b-Vl-Trh">
                                 <rect key="frame" x="67" y="111" width="91" height="30"/>
@@ -78,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Act-qC-OSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1279" y="653"/>
+            <point key="canvasLocation" x="1319" y="566"/>
         </scene>
     </scenes>
 </document>
